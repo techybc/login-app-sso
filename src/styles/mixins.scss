@@ -1,0 +1,24 @@
+@use "sass:map";
+
+// ------------------------------------------------------
+// Breakpoints
+// ------------------------------------------------------
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// ------------------------------------------------------
+@mixin respond-to($size) {
+  $bp: map.get($breakpoints, $size);
+
+  @if $bp {
+    @media (min-width: $bp) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$size}' not found in map!";
+  }
+}

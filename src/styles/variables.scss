@@ -1,0 +1,140 @@
+// ------------------------------------------------------
+// COLOR PALETTE (based on your screenshot)
+// Orange & White are primary theme colors
+// ------------------------------------------------------
+
+// Primary (Orange scale)
+$orange-1:  #fff7f1;
+$orange-2:  #ffeadb;
+$orange-3:  #ffd7b7;
+$orange-4:  #ffc299;
+$orange-5:  #ffae78;
+$orange-6:  #ff9650;
+$orange-7:  #f27d2d;
+$orange-8:  #e36c16;
+$orange-9:  #d26000;
+$orange-10: #b44f00;
+$orange-11: #8c3c00;
+$orange-12: #692b00;
+$orange-13: #4B1E00;
+
+// Blue scale
+$blue-1:  #f5f8ff;
+$blue-2:  #e7edff;
+$blue-3:  #d6e3ff;
+$blue-4:  #c3d6ff;
+$blue-5:  #aac8ff;
+$blue-6:  #8cb7ff;
+$blue-7:  #6aa3ff;
+$blue-8:  #488dff;
+$blue-9:  #2473ff;
+$blue-10: #0055f0;
+$blue-11: #003ec2;
+$blue-12: #002b8f;
+$blue-13: #001c61;
+
+// Green scale
+$green-1:  #f2fff5;
+$green-2:  #e1ffe6;
+$green-3:  #ccf6d4;
+$green-4:  #b3e8bd;
+$green-5:  #93dca2;
+$green-6:  #74ce89;
+$green-7:  #55bf71;
+$green-8:  #34ae58;
+$green-9:  #1c9f45;
+$green-10: #0b8933;
+$green-11: #006a27;
+$green-12: #00491b;
+$green-13: #003213;
+
+// Red scale
+$red-1:  #fff1f2;
+$red-2:  #ffe0e2;
+$red-3:  #ffc7ca;
+$red-4:  #ffabae;
+$red-5:  #ff8b90;
+$red-6:  #ff686e;
+$red-7:  #e94b52;
+$red-8:  #d8373e;
+$red-9:  #c41f27;
+$red-10: #a80d15;
+$red-11: #7e0208;
+$red-12: #590000;
+$red-13: #3d0000;
+
+// Yellow scale
+$yellow-1:  #fff9e9;
+$yellow-2:  #fff1c5;
+$yellow-3:  #ffe7a3;
+$yellow-4:  #ffde84;
+$yellow-5:  #ffd462;
+$yellow-6:  #ffc841;
+$yellow-7:  #f2b41c;
+$yellow-8:  #e09f00;
+$yellow-9:  #cd8d00;
+$yellow-10: #b17600;
+$yellow-11: #8a5800;
+$yellow-12: #633c00;
+$yellow-13: #452900;
+
+
+// ------------------------------------------------------
+// SEMANTIC THEME TOKENS (USE THESE IN UI)
+// ------------------------------------------------------
+
+$color-primary:        $orange-7;
+$color-primary-light:  $orange-4;
+$color-primary-dark:   $orange-10;
+
+$color-bg:             #ffffff;
+$color-bg-muted:       #fafafa;
+$color-surface:        #ffffff;
+$color-border:         #e5e5e5;
+
+$color-text:           #222222;
+$color-text-muted:     #6b6b6b;
+$color-text-light:     #ffffff;
+
+$color-success:        $green-8;
+$color-error:          $red-8;
+$color-warning:        $yellow-8;
+$color-info:           $blue-8;
+
+
+// ------------------------------------------------------
+// SHADOWS
+// ------------------------------------------------------
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+
+// ------------------------------------------------------
+// BORDER RADIUS
+// ------------------------------------------------------
+
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+
+
+// ------------------------------------------------------
+// SPACING SCALE (8px system)
+// ------------------------------------------------------
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 40px;
+$space-9: 48px;
+$space-10: 64px;
+$space-11: 80px;
+$space-12: 96px;
+$space-13: 128px;

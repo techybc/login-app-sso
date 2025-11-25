@@ -1,0 +1,265 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+@use 'sass:color';
+
+/* =====================================================================
+   CSS Custom Properties (for future runtime theming)
+===================================================================== */
+:root {
+  // Theme colors
+  --color-primary: #{$color-primary};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+
+  --color-bg: #{$color-bg};
+  --color-bg-muted: #{$color-bg-muted};
+  --color-surface: #{$color-surface};
+
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-light: #{$color-text-light};
+
+  --color-border: #{$color-border};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+
+  --space-1: #{$space-1};
+  --space-2: #{$space-2};
+  --space-3: #{$space-3};
+  --space-4: #{$space-4};
+  --space-5: #{$space-5};
+  --space-6: #{$space-6};
+  --space-7: #{$space-7};
+  --space-8: #{$space-8};
+}
+
+/* =====================================================================
+   Global Reset / Base
+===================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+/* =====================================================================
+   Typography
+===================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 var(--space-3) 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin: 0 0 var(--space-4) 0;
+}
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: color.scale($color-primary-dark, $lightness: -10%);
+  }
+}
+
+/* =====================================================================
+   Layout Primitives
+===================================================================== */
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+
+  @include respond-to(sm) { max-width: 540px; }
+  @include respond-to(md) { max-width: 720px; }
+  @include respond-to(lg) { max-width: 960px; }
+  @include respond-to(xl) { max-width: 1140px; }
+}
+
+.section {
+  padding: var(--space-7) 0;
+
+  &--muted {
+    background-color: var(--color-bg-muted);
+  }
+
+  &--alt {
+    background-color: color.mix($color-bg, #fff, 75%);
+  }
+}
+
+/* =====================================================================
+   Navbar
+===================================================================== */
+
+.navbar {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-sm);
+
+  a {
+    color: rgba(255, 255, 255, 0.95);
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+/* =====================================================================
+   Card
+===================================================================== */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &--hover {
+    &:hover {
+      box-shadow: var(--shadow-md);
+      border-color: color.mix($color-primary, #000, 15%);
+    }
+  }
+
+  &__header {
+    padding-bottom: var(--space-3);
+    font-weight: 600;
+  }
+
+  &__body {
+    padding-top: var(--space-3);
+  }
+}
+
+/* =====================================================================
+   Buttons
+===================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+
+  &:hover {
+    background-color: color.scale($color-primary, $lightness: 45%);
+  }
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+
+  &:hover {
+    background-color: rgba($color-primary, 0.08);
+  }
+}
+
+/* =====================================================================
+   Utility Classes
+===================================================================== */
+.text-muted { color: var(--color-text-muted); }
+.text-primary { color: var(--color-primary); }
+.text-light { color: var(--color-text-light); }
+
+.bg-primary { background-color: var(--color-primary); color: white; }
+.bg-muted { background-color: var(--color-bg-muted); }
+
+.rounded { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+
+/* Margins & Padding */
+.mt-1 { margin-top: var(--space-2); }
+.mt-2 { margin-top: var(--space-3); }
+.mt-3 { margin-top: var(--space-4); }
+.mt-4 { margin-top: var(--space-5); }
+
+.p-1 { padding: var(--space-2); }
+.p-2 { padding: var(--space-3); }
+.p-3 { padding: var(--space-4); }
+
+/* =====================================================================
+   Responsive Helpers
+===================================================================== */
+
+.hide-sm { display: none; }
+
+@include respond-to(md) {
+  .hide-sm { display: initial; }
+  .hide-md-up { display: none; }
+}
