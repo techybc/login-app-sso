@@ -1,0 +1,59 @@
+@use '../../../../styles/variables' as *;
+
+.root {
+  padding-top: 4px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.description {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.email {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.otpInputs {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.helperRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.resend {
+  color: #9ca3af;
+  cursor: default;
+
+  &.active {
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+}
+
+.timer {
+  color:#ef4444;
+  font-weight: 600;
+}
+
+.footerButton {
+  width: 100%;
+}
+
+

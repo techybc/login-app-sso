@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import RootLayout from '../pages/RootLayout';
-import Auth from '../pages/auth/AuthPage';
+import AuthPage from '../pages/authPage/AuthPage';
 
 const routes = [
   {
@@ -17,13 +17,13 @@ const routes = [
         children: [
           {
             index: true,
-            element: <Auth /> 
+            element: <AuthPage /> 
           }
         ]
       },
       {
         path: 'preview',
-        element: <Auth />
+        element: <AuthPage />
       }
     ]
   }
