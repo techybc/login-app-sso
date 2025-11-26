@@ -1,0 +1,236 @@
+@use '../../../styles/variables.scss' as *;
+@use '../../../styles/mixins.scss' as *;
+
+.page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-10 0;
+  background-color: $color-bg-muted;
+}
+
+.card {
+  width: 100%;
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: 1fr; // mobile first: stacked
+  gap: $space-7;
+  padding: $space-6 $space-4;
+
+  // At medium and up: two columns with wider padding, AI card on the right
+  @include respond-to(md) {
+    grid-template-columns: 1.15fr 1fr;
+    gap: $space-10;
+    padding: $space-10 $space-9;
+  }
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: $space-6;
+}
+
+.title {
+  margin: 0 0 $space-2 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: $color-text-muted;
+}
+
+.subtitleHighlight {
+  font-weight: 600;
+  color: $color-primary;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.buttonGoogle {
+  background-color: $color-bg;
+  border-color: $color-border;
+  color: $color-text;
+  box-shadow: $shadow-sm;
+  margin-bottom: $space-5;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+.buttonPrimary {
+  margin-top: $space-3;
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: $space-3;
+  background: radial-gradient(circle at 30% 30%, #fff 0, #fff 40%, transparent 41%),
+    conic-gradient(#4285f4 0 90deg, #34a853 90deg 180deg, #fbbc05 180deg 270deg, #ea4335 270deg 360deg);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin-top: $space-5;
+  margin-bottom: $space-5;
+}
+
+.separatorLine {
+  flex: 1;
+  height: 1px;
+  background-color: $color-border;
+}
+
+.separatorText {
+  margin: 0 $space-3;
+  font-size: 0.8rem;
+  color: $color-text-muted;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $space-4;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $color-text;
+  margin-bottom: $space-2;
+  text-align: left;
+}
+
+.required {
+  color: $color-primary;
+}
+
+.input {
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  padding: $space-3 $space-4;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 1px rgba($color-primary, 0.1);
+  }
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.passwordInput {
+  width: 100%;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: $space-3;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordIconHidden,
+.passwordIconVisible {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid $color-border;
+  position: relative;
+}
+
+.passwordIconHidden::before,
+.passwordIconVisible::before {
+  content: '';
+  position: absolute;
+  inset: 5px 4px;
+  border-radius: 999px;
+  border: 1px solid $color-border;
+}
+
+.passwordIconVisible::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 50%;
+  height: 2px;
+  background-color: $color-primary;
+  transform: rotate(-12deg);
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.linkButton {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $color-primary;
+  margin-bottom: $space-5;
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.footerText {
+  margin-top: $space-4;
+  font-size: 0.85rem;
+  color: $color-text-muted;
+}
