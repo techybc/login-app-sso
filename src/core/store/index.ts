@@ -1,14 +1,40 @@
-import { configureStore } from '@reduxjs/toolkit'; // Example slice
-import appReducer from './slice/appSlice';
-import authReducer from './slice/authSlice';
+/* =======================
+   API REQUEST TYPES
+======================= */
 
+export interface OtpRequestPayload {
+  email: string;
+}
 
-export const store = configureStore({
-  reducer: {
-    app: appReducer,
-    auth: authReducer
-  }
-});
+export interface OtpVerifyPayload {
+  email: string;
+  otp: string;
+}
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+/* =======================
+   API RESPONSE TYPES
+======================= */
+
+export interface OtpRequestResponse {
+  email: string;
+  otp: string;
+}
+
+export interface OtpVerifyResponse {
+  access_token: string;
+  id_token: string;
+  scope: string;
+  expires_in: number;
+  token_type: string;
+}
+
+/* =======================
+   AUTH REDUX STATE
+======================= */
+
+export interface AuthState {
+  email: string | null;
+  isLoading: boolean;
+  isAuthenticated: boolean;
+  error: string | null;
+}
